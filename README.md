@@ -9,10 +9,10 @@ Hệ thống tách bạch vùng nhìn camera với hành trình thực tế củ
 `Pixel (u, v) ─[Tầng 1: Homography 4 góc]─> Vision mm (x, y) ─[Tầng 2: Ma trận hiệu chuẩn corr_M]─> Machine mm (X, Y)`
 
 - **Thứ tự click 4 góc vùng làm việc (Tầng 1):**
-  1. Top-Left `(0, 120)`
-  2. Top-Right `(210, 120)`
-  3. Bottom-Right `(210, 0)`
-  4. Bottom-Left `(0, 0)`
+  1. Top-Left
+  2. Top-Right
+  3. Bottom-Right 
+  4. Bottom-Left\
 - **Nhân ma trận đồng nhất (Homogeneous):** Nhân ma trận $3 \times 3$ với vectơ $[x, y, 1]^T$ và chia cho thành phần thứ 3 trước khi kiểm tra giới hạn hành trình máy (`strict_bounds=True`). Điểm ngoài biên hợp lệ sẽ bị từ chối thay vì ép biên.
 - **Trạng thái phôi:** `DETECTED` → `STABLE` → `STALE` → `LOST`.
 - **An toàn MVP:** Cờ `ALLOW_LASER_FIRING = False` khóa phát tia laser ở giai đoạn thử nghiệm; luôn tách biệt dừng mềm trên giao diện với mạch ngắt khẩn cấp vật lý.
